@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaBell, FaEnvelope, FaUser, FaUsers, FaPlus, FaBookmark,FaCog, FaGamepad, FaTrophy, FaShoppingCart } from "react-icons/fa";
+import { FaHome, FaBell, FaEnvelope, FaTrash, FaBook , FaUser, FaUsers, FaPlus, FaBookmark,FaCog, FaGamepad, FaTrophy, FaShoppingCart } from "react-icons/fa";
 
 const navItems = [
   { to: "/home", label: "Inicio", icon: <FaHome size={18} /> },
@@ -13,6 +13,8 @@ const navItems = [
   { to: "/games", label: "Juegos", icon: <FaGamepad size={18} /> }, // <-- juegos
    { to: "/ranking", label: "Ranking", icon: <FaTrophy size={18} /> },
   { to: "/store", label: "Tienda", icon: <FaShoppingCart size={18} /> }, // <-- tienda
+  { to: "/stories", label: "Historias", icon: <FaBook size={18} /> },// <-- historias
+  { to: "/stories/trash", label: "Papelera de historias", icon: <FaTrash size={18} /> } // <-- papelera de historias
 
 ];
 

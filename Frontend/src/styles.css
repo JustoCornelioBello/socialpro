@@ -1107,7 +1107,7 @@ margin: 5px;
 .rightpanel-stack{
 
   padding: 3px;
-  height: 600px;
+  height: 700px;
   overflow: auto;
 }
 
@@ -1206,6 +1206,90 @@ margin: 5px;
   border:1px solid var(--border); border-radius:12px; background:#0f141b;
   font-size:20px;
 }
+.toast-like{
+  position: fixed; right: 16px; bottom: 16px;
+  background:#0f141b; color: var(--text);
+  border:1px solid var(--border); border-radius:12px;
+  padding:10px 12px; animation: toastIn 2.2s ease both;
+}
+@keyframes toastIn{
+  0%{ transform: translateY(12px); opacity:0; }
+  10%{ transform: translateY(0); opacity:1; }
+  80%{ opacity:1; }
+  100%{ transform: translateY(12px); opacity:0; }
+}
+
+
+
+.story-toolbar{
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px; padding:8px; border:1px solid var(--border); border-radius:12px; background:#0b1118;
+}
+.story-toolbar .tb-btn{ border:1px solid var(--border); background:#0f141b; padding:6px 8px; border-radius:8px; }
+.story-toolbar .tb-btn:hover{ transform: translateY(-1px); }
+.story-toolbar .tb-sep{ width:1px; height:24px; background:var(--border); margin:0 6px; }
+.story-toolbar .tb-field{ display:flex; align-items:center; gap:8px; }
+
+.story-editor .story-title-input{ font-size:20px; font-weight:600; }
+.story-content{
+  min-height:360px; padding:16px; margin-top:10px;
+  border:1px dashed var(--border); border-radius:12px; background:#0b1118;
+}
+.story-content:focus{ outline: none; border-style: solid; }
+
+.story-preview{
+  max-height:160px; overflow:hidden; border-top:1px dashed var(--border); margin-top:8px; padding-top:8px;
+}
+
+.story-public .story-title{ margin:0 0 8px 0; }
+
+/* buscador */
+.rp-search-wrap{
+  gap:8px; padding:4px 8px; border:1px solid var(--border); border-radius:8px;
+  background:#0b1118;
+}
+
+
+/* Texto blanco en el editor / vista pública */
+.story-content { color: #fff; }
+.story-public .story-title { margin:0 0 8px 0; color:#fff; }
+
+/* Portada */
+.story-cover-preview img,
+.story-cover-view img {
+  width:100%; height:auto; border-radius:12px; object-fit:cover;
+  border:1px solid var(--border);
+}
+
+/* Toolbar, editor (de tu versión previa) */
+.story-toolbar{
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px; padding:8px; border:1px solid var(--border); border-radius:12px; background:#0b1118;
+}
+.story-toolbar .tb-btn{ border:1px solid var(--border); background:#0f141b; padding:6px 8px; border-radius:8px; }
+.story-toolbar .tb-btn:hover{ transform: translateY(-1px); }
+.story-toolbar .tb-sep{ width:1px; height:24px; background:var(--border); margin:0 6px; }
+.story-toolbar .tb-field{ display:flex; align-items:center; gap:8px; }
+
+.story-editor .story-title-input{ font-size:20px; font-weight:600; }
+.story-content{
+  min-height:360px; padding:16px; margin-top:10px;
+  border:1px dashed var(--border); border-radius:12px; background:#0b1118;
+}
+.story-content:focus{ outline: none; border-style: solid; }
+
+.story-preview{
+  max-height:160px; overflow:hidden; border-top:1px dashed var(--border); margin-top:8px; padding-top:8px;
+  color:#fff;
+}
+
+/* buscador */
+.rp-search-wrap{
+  gap:8px; padding:4px 8px; border:1px solid var(--border); border-radius:8px;
+  background:#0b1118;
+}
+
+/* Toast reutilizable */
 .toast-like{
   position: fixed; right: 16px; bottom: 16px;
   background:#0f141b; color: var(--text);

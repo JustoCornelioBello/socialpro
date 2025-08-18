@@ -18,7 +18,9 @@ import Settings from "./pages/Settings.jsx";
 import Saved from "./pages/Saved.jsx";
 import Ranking from "./pages/Ranking.jsx";
 import Store from "./pages/Store.jsx";
-
+import Stories from "./pages/Stories.jsx";
+import StoriesView from "./pages/StoriesView.jsx";
+import StoriesTrash from "./pages/StoriesTrash.jsx";
 
 export default function App() {
   return (
@@ -42,9 +44,12 @@ export default function App() {
             <Route path="/messages" element={<Messages />} />
            <Route path="/groups/new" element={<CreateGroup />} />
             <Route path="/ranking" element={<Ranking />} />
+            <Route path="/stories/trash" element={<StoriesTrash />} />
             <Route path="/store" element={<Store />} />
             <Route path="/saved" element={<Saved />} />
             <Route path="/games" element={<Games />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/stories/view/:id" element={<StoriesView />} />
             
             <Route path="/settings" element={<Settings />} />
             <Route path="/groups" element={<Groups />} />

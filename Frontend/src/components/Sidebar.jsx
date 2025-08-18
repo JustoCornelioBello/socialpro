@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaBell, FaEnvelope, FaUser, FaUsers, FaPlus } from "react-icons/fa";
+import { FaHome, FaBell, FaEnvelope, FaUser, FaUsers, FaPlus, FaBookmark,FaCog, FaGamepad, FaTrophy, FaShoppingCart } from "react-icons/fa";
 
 const navItems = [
   { to: "/home", label: "Inicio", icon: <FaHome size={18} /> },
@@ -8,6 +8,12 @@ const navItems = [
   { to: "/profile", label: "Perfil", icon: <FaUser size={18} /> },
   { to: "/groups", label: "Grupos", icon: <FaUsers size={18} /> },        // <-- listado
   { to: "/groups/new", label: "Crear grupo", icon: <FaPlus size={18} /> }, // <-- crear
+  { to: "/saved", label: "Guardados", icon: <FaBookmark size={18} /> }, // <-- guardados
+  { to: "/settings", label: "Configuración", icon: <FaCog size={18} /> },
+  { to: "/games", label: "Juegos", icon: <FaGamepad size={18} /> }, // <-- juegos
+   { to: "/ranking", label: "Ranking", icon: <FaTrophy size={18} /> },
+  { to: "/store", label: "Tienda", icon: <FaShoppingCart size={18} /> }, // <-- tienda
+
 ];
 
 export default function Sidebar() {

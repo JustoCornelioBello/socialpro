@@ -301,7 +301,7 @@ export default function Profile() {
           </div>
 
           <div className="profile-id">
-            <h2 className="m-0">{profile.name || "(Sin nombre)"}</h2>
+            <h2 className="m-0" style={{color: 'white'}}>{profile.name || "(Sin nombre)"}</h2>
             <div className="muted">@{handle}</div>
             <div className="muted small">
               {posts.length} publicaciones · {profile.followers ?? 0} seguidores · {profile.following ?? 0} siguiendo
@@ -386,7 +386,7 @@ export default function Profile() {
       )}
 
       {tab === "about" && (
-        <div className="card">
+        <div className="card" style={{color:'white'}}>
           <h4 className="card-title">Información</h4>
           <ul className="list">
             <li><strong>Nombre:</strong> {profile.name}</li>

@@ -11,7 +11,14 @@ import Profile from "./pages/Profile.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import CreateGroup from "./pages/CreateGroup.jsx";
 import GroupDetail from "./pages/GroupDetail.jsx";
+import Games from "./pages/Games.jsx";
 import Groups from "./pages/Groups.jsx";
+import Settings from "./pages/Settings.jsx";
+// imports de siempre...
+import Saved from "./pages/Saved.jsx";
+import Ranking from "./pages/Ranking.jsx";
+import Store from "./pages/Store.jsx";
+
 
 export default function App() {
   return (
@@ -34,6 +41,12 @@ export default function App() {
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/messages" element={<Messages />} />
            <Route path="/groups/new" element={<CreateGroup />} />
+            <Route path="/ranking" element={<Ranking />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/saved" element={<Saved />} />
+            <Route path="/games" element={<Games />} />
+            
+            <Route path="/settings" element={<Settings />} />
             <Route path="/groups" element={<Groups />} />
             <Route path="/groups/:slug" element={<GroupDetail />} />
             <Route path="/profile" element={<Profile />} />

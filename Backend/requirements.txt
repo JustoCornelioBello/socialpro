@@ -1,0 +1,6 @@
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+pydantic==2.6.1
+python-multipart==0.0.9
+reportlab==4.0.9
+openai==1.30.1      # opcional: solo si vas a usar un LLM externo (requiere OPENAI_API_KEY)

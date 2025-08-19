@@ -14,16 +14,16 @@ const slug = (name = "") =>
   name.toLowerCase().replace(/\s+/g, "_").replace(/[^a-z0-9_]/g, "");
 
 function CommentItem({
-   c,
+  c,
   allComments,
-  onReply = () => {},
-  onToggleLike = () => {},
-  onToggleDislike = () => {},
-  onCopy = () => {},
-  onHide = () => {},
-  onUnhide = () => {},
-  onDelete = () => {},
-  onReport = () => {},
+  onReply = () => { },
+  onToggleLike = () => { },
+  onToggleDislike = () => { },
+  onCopy = () => { },
+  onHide = () => { },
+  onUnhide = () => { },
+  onDelete = () => { },
+  onReport = () => { },
   depth = 0,
 }) {
   const children = useMemo(
@@ -33,7 +33,7 @@ function CommentItem({
   const liked = c.userReaction === "like";
   const disliked = c.userReaction === "dislike";
 
-    // Estado visual si está oculto
+  // Estado visual si está oculto
   if (c.hidden) {
     return (
       <li className="fp-comment" style={{ marginLeft: depth * 16 }}>
@@ -53,6 +53,10 @@ function CommentItem({
       </li>
     );
   }
+
+
+
+
 
   return (
     <li className="fp-comment" style={{ marginLeft: depth * 16 }}>
@@ -136,28 +140,28 @@ function CommentItem({
   );
 }
 export default function FeedPost({
-   post,
+  post,
   // Reacciones y comentarios
-  onToggleLike = () => {},
-  onToggleDislike = () => {},
-  onAddComment = () => {},
-  onShare = () => {},
-  onCommentLike = () => {},
-  onCommentDislike = () => {},
+  onToggleLike = () => { },
+  onToggleDislike = () => { },
+  onAddComment = () => { },
+  onShare = () => { },
+  onCommentLike = () => { },
+  onCommentDislike = () => { },
 
   // 🔹 ACCIONES DEL POST (FALTABAN)
-  onSave = () => {},
-  onHide = () => {},
-  onUnhide = () => {},
-  onDelete = () => {},
-  onReport = () => {},
+  onSave = () => { },
+  onHide = () => { },
+  onUnhide = () => { },
+  onDelete = () => { },
+  onReport = () => { },
 
   // Acciones por comentario
-  onCommentCopy = () => {},
-  onCommentHide = () => {},
-  onCommentUnhide = () => {},
-  onCommentDelete = () => {},
-  onCommentReport = () => {},
+  onCommentCopy = () => { },
+  onCommentHide = () => { },
+  onCommentUnhide = () => { },
+  onCommentDelete = () => { },
+  onCommentReport = () => { },
 }) {
   const [comment, setComment] = useState("");
   const [replyTo, setReplyTo] = useState(null); // {id, name} | null
@@ -191,12 +195,30 @@ export default function FeedPost({
     setComment((prev) => (prev?.startsWith(`@${name} `) ? prev : `@${name} `));
   };
 
+
+
+
+
+  function escapeHtml(s = "") { return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])); }
+  function linkify(text = "") {
+    // auto-enlaza URLs http/https
+    const urlRe = /\bhttps?:\/\/[^\s)]+/gi;
+    // escapa primero y luego reemplaza URLs por <a>
+    const safe = escapeHtml(text);
+    return safe.replace(urlRe, (m) => `<a href="${m}" target="_blank" rel="noopener noreferrer">${m}</a>`);
+  }
+
+
+
+
+
+
   // Si está oculto, mostrar tarjeta compacta
   if (post.hidden) {
     return (
       <article className="card feed-post">
         <div className="feed-hidden">
-          <div className="d-flex align-items-center gap-2">
+          <div className="d-flex align-items-center gap-2" style={{color:'white'}}>
             <BsEyeSlash />
             <span>Publicación oculta</span>
           </div>
@@ -279,7 +301,27 @@ export default function FeedPost({
       </header>
 
       {/* Texto (con clamp) */}
-      {post.text && <div className="feed-post-text" style={{color:'white'}}>{displayText}</div>}
+
+
+
+
+       <div style={{color: 'white'}}>
+
+{post.text && (
+        <div
+          className="feed-post-text"
+          dangerouslySetInnerHTML={{ __html: linkify(displayText) }}
+        />
+      )}
+
+       </div>
+
+
+      
+
+
+
+
 
       {/* Imágenes */}
       {Array.isArray(post.images) && post.images.length > 0 && (
@@ -312,18 +354,18 @@ export default function FeedPost({
       <ul className="fp-comments">
         {rootComments.map((c) => (
           <CommentItem
-  key={c.id}
-  c={c}
-  allComments={post.comments}
-  onReply={startReply}
-  onToggleLike={(cid) => onCommentLike(post.id, cid)}
-  onToggleDislike={(cid) => onCommentDislike(post.id, cid)}
-  onCopy={(cid) => onCommentCopy(post.id, cid)}
-  onHide={(cid) => onCommentHide(post.id, cid)}
-  onUnhide={(cid) => onCommentUnhide(post.id, cid)}
-  onDelete={(cid) => onCommentDelete(post.id, cid)}
-  onReport={(cid) => onCommentReport(post.id, cid)}
-/>
+            key={c.id}
+            c={c}
+            allComments={post.comments}
+            onReply={startReply}
+            onToggleLike={(cid) => onCommentLike(post.id, cid)}
+            onToggleDislike={(cid) => onCommentDislike(post.id, cid)}
+            onCopy={(cid) => onCommentCopy(post.id, cid)}
+            onHide={(cid) => onCommentHide(post.id, cid)}
+            onUnhide={(cid) => onCommentUnhide(post.id, cid)}
+            onDelete={(cid) => onCommentDelete(post.id, cid)}
+            onReport={(cid) => onCommentReport(post.id, cid)}
+          />
 
         ))}
       </ul>

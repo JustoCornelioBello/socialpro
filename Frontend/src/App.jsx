@@ -21,6 +21,9 @@ import Store from "./pages/Store.jsx";
 import Stories from "./pages/Stories.jsx";
 import StoriesView from "./pages/StoriesView.jsx";
 import StoriesTrash from "./pages/StoriesTrash.jsx";
+import StoriesAnalytics from "./pages/StoriesAnalytics.jsx";
+import Chatbot from "./pages/Chatbot.jsx";
+
 
 export default function App() {
   return (
@@ -42,15 +45,19 @@ export default function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/messages" element={<Messages />} />
-           <Route path="/groups/new" element={<CreateGroup />} />
+            <Route path="/groups/new" element={<CreateGroup />} />
+            <Route path="/chatbot" element={<Chatbot />} />
             <Route path="/ranking" element={<Ranking />} />
             <Route path="/stories/trash" element={<StoriesTrash />} />
             <Route path="/store" element={<Store />} />
             <Route path="/saved" element={<Saved />} />
+           
+            <Route path="/stories/analytics" element={<StoriesAnalytics />} />
+
             <Route path="/games" element={<Games />} />
             <Route path="/stories" element={<Stories />} />
             <Route path="/stories/view/:id" element={<StoriesView />} />
-            
+
             <Route path="/settings" element={<Settings />} />
             <Route path="/groups" element={<Groups />} />
             <Route path="/groups/:slug" element={<GroupDetail />} />
